@@ -11,7 +11,7 @@ class Calculator(QWidget):
 
     def initUI(self):
         self.setWindowTitle('계산기')
-        self.resize(260,260)
+        self.resize(256,256)
         self.show()
 
 if __name__=='__main__':
