@@ -3,9 +3,7 @@
 import sys 
 import random # 내 맘대로 로또 추첨 기능 추가할래
 
-from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QVBoxLayout,
-                             QMessageBox, QPlainTextEdit, QHBoxLayout,QLabel)
-from PyQt5.QtCore import QDate,Qt # 날짜 정보.
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout,QMessageBox, QPlainTextEdit, QHBoxLayout
 from PyQt5.QtGui import QIcon
 from prompt import sayHello
 
@@ -13,11 +11,9 @@ from prompt import sayHello
 class Calculator(QWidget):
     def __init__(self):
         super().__init__()
-        self.date = QDate.currentDate()
         self.initUI()
 
     def initUI(self):
-        self.lb1 = QLabel(self.date.toString(Qt.DefaultLocaleLongDate), self)
         self.te1 = QPlainTextEdit()
         self.te1.setReadOnly(True)
 
@@ -34,13 +30,13 @@ class Calculator(QWidget):
         vbox = QVBoxLayout()
         vbox.addWidget(self.te1) 
         vbox.addLayout(hbox) #버튼을 가운데로 
-        vbox.addWidget(self.lb1) #날짜 정보
+        vbox.addStretch(1) #아랫 여백
 
         self.setLayout(vbox) # 반영
 
         self.setWindowTitle('로또번호 추첨기')
         # self.setWindowIcon(QIcon(''))
-        self.resize(256,300)
+        self.resize(256,256)
         self.show()
 
     def activateMessage(self) :
