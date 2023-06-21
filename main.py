@@ -1,11 +1,11 @@
 # ch 4.2.1. main.py
 
 import sys 
+import random # 내 맘대로 로또 추첨 기능 추가할래
 
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout,QMessageBox, QPlainTextEdit, QHBoxLayout
 from PyQt5.QtGui import QIcon
-
-import random # 내 맘대로 로또 추첨 기능 추가할래
+from prompt import sayHello
 
 
 class Calculator(QWidget):
